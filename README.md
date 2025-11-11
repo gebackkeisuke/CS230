@@ -9,3 +9,5 @@ This repository contains the code for the 2025 CS230 project, owned by Keisuke Y
 5. The fifth phase covers evaluation and inference.  
 
 In this repository, I have uploaded the code for the last two phases.
+
+Since I haven't uploaded the dataset according to the instruction, these codes cannot be executable. However, as stated in the report, I confirmed that these codes work well and finished the test run.
