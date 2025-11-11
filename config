@@ -1,0 +1,71 @@
+fol_output: '/output/'
+no_of_objectives: 2         # Number of objectives [-] # This is temporary setting. This information should be read from OPTInput.in.
+
+Nx: 202                     # Number of grid cells in x-direction [-]
+Ny: 202                     # Number of grid cells in y-direction [-]
+Nz: 1                       # Number of grid cells in z-direction [-]
+dx: 400                     # Grid size in x-direction [m]
+dy: 400                     # Grid size in y-direction [m]
+Sg_threshold: 0.01          # CO2 saturation threshold [fraction]
+DP_threshold: 70            # Pressure difference threshold [bar]
+buffer_mile: 0.5            # Buffer size [mile]
+buffer_MMV: 0.5             # Buffer size for MMV [mile]
+LGR: 2                      # Number of nested hierarchies of LGR [-]
+# buffer_mile: 1.0           # Buffer size [mile]
+
+# For well constraints
+Elevation: -2387.1          # Elevation of the surface [ftSSL]
+# boundary_min_width: 3.0   # Minimum distance from the boundary [km]
+# lease_min_width: 1.0      # Minimum distance from the lease boundary [km]
+
+DPfrac: 0.71                # Pressure gradient [psi/ft]
+SafetyFactor: 0.9           # Safety factor for pressure gradient [-]
+
+# For NPV calculation
+# Some parameters depend on project-specific data. TBU!!!!! In this case, df_projects.
+discount_rate: 0.1              # Discount rate [-]
+CO2_price: 30.0                 # CO2 price [USD/ton] * Originally 50
+CO2_density: 1.86841            # CO2 density [kg/m3]
+Lease_unit_cost: 25             # Lease cost [USD/acre]
+Brine_trespass_unit_cost: 0.0   # Brine trespass cost [USD/ton-brine]
+Royalty_co2_unit_cost: 0.5      # Royalty cost for CO2 [USD/ton-CO2] 
+science_and_engineering: 250000 # Science and engineering cost [USD/year]
+pipeline_unit_cost: 540000      # Pipeline cost [USD/mile]
+3D_seismic_survey_cost: 100000  # 3D seismic survey cost [USD/mile2]
+2D_seismic_survey_cost: 1750000 # 50 miles of 2D seismic survey cost [USD]
+frequency_3D_seismic: 5         # Frequency of 3D seismic surveys [years]
+baseline_env_monitoring: 339000 # Baseline environmental monitoring cost [USD]
+pipeline_opex: 7700             # Pipeline OPEX cost [USD/mile/year]
+well_opex: 61376                # Well OPEX cost [USD/well/year]
+near_surface_monitoring: 150000 # Near surface monitoring cost [USD/year]
+administrative_cost: 2752500    # Administrative cost [USD]
+permit_review: 487500           # Permit review cost [USD/every 5 years]
+frequency_permit_review: 5      # Frequency of permit reviews [years]
+trust_fund: 0.09                # Trust fund [USD/ton-CO2]
+
+# Repair method
+min_distance_between_boundary: 4      # Minimum distance from the boundary from well placement [km]
+min_interwell_distance: 0.4           # Minimum interwell distance [km]
+max_interwell_distance: 110           # Maximum interwell distance [km]
+max_iters_alternative_projection: 200 # Maximum iterations for alternating projection [-]
+tol_alternative_projection: 1e-6      # Tolerance for alternating projection [-]
+perturb_scale: 4.0                    # Perturbation scale for initial solution [-]
+perturb_freq: 10                      # Frequency of perturbation in iterations [-]
+threshold_interwell_distance: 0.4     # Threshold for interwell distance [km] *This sould be same as gridsize?
+
+# Penalty function parameters
+k_wl: 0.05 # Penalty coefficient for well to lease distance [-]
+k_wb: 0.05 # Penalty coefficient for well to model boundary distance [-]
+k_ww: 0.5 # Penalty coefficient for well to well distance [-]
+
+# not used now
+# Annual_rental_unit_cost: 4    # Annual rental cost [USD/acre/year]
+# Annual_rental_increase: 0.02  # Annual rental increase rate [-]
+# Royalty_increase: 0.1         # Royalty increase rate [-/5years]
+
+# Caution: Using the parameters for simple dip model
+# Lx: 100                     # Model length in x-direction [km]
+# Theta_top: 0.3              # Dip angle at the top of the layer [degrees]
+# Theta_btm: 0.35729          # Dip angle at the bottom of the layer [degrees]
+# z0: 2000                    # Depth of the top of the layer [m]
+# N_layer: 20                # Number of layers in the grid [-]
